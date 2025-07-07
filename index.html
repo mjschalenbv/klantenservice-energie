@@ -3,343 +3,353 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Klantenservice Energie - Snel & Vriendelijk Contact</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet" />
+<title>Klantenservice Energie</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
 <style>
-  /* Reset */
+  /* Reset & basics */
   *, *::before, *::after {
     margin: 0; padding: 0; box-sizing: border-box;
   }
   body {
     font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(135deg, #00539C 0%, #007E3A 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #004e92, #00a651);
+    color: #222;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
   a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
   }
-  a:focus, button:focus {
-    outline: 3px solid #FFD166;
-    outline-offset: 4px;
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
   }
 
-  /* Container */
+  /* Sticky Topbar */
+  .topbar {
+    position: sticky;
+    top: 0;
+    background: #003c70;
+    color: white;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .topbar .logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1.3px;
+  }
+  .topbar .call-btn {
+    background: #ff6600;
+    padding: 12px 28px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 50px;
+    box-shadow: 0 6px 15px rgba(255,102,0,0.6);
+    user-select: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: white;
+  }
+  .topbar .call-btn:hover {
+    background: #e65500;
+    box-shadow: 0 10px 25px rgba(230,85,0,0.8);
+  }
+  .topbar .call-btn:active {
+    transform: scale(0.96);
+  }
+
+  /* Main container */
   .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-    flex-grow: 1;
+    max-width: 900px;
+    width: 95%;
+    margin: 40px auto 80px auto;
+    background: rgba(255 255 255 / 0.95);
+    border-radius: 18px;
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.1);
+    padding: 48px 32px 64px 32px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     text-align: center;
   }
 
-  /* Header */
-  header {
-    background: rgba(255 255 255 / 0.15);
-    border-radius: 18px;
-    padding: 4rem 2rem 3rem;
-    box-shadow: 0 12px 28px rgba(0, 116, 217, 0.45);
-    margin-bottom: 3rem;
-    position: relative;
-    overflow: hidden;
-  }
+  /* Hero Banner */
   header h1 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 4.2rem;
-    letter-spacing: 0.15em;
-    margin-bottom: 1rem;
+    font-weight: 800;
+    font-size: 3.6rem;
+    color: #004e92;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
     text-transform: uppercase;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.4);
-    animation: slideInDown 1s ease forwards;
+    text-shadow: 0 0 6px rgba(0,0,0,0.07);
   }
   header p {
+    font-size: 1.35rem;
     font-weight: 600;
-    font-size: 1.5rem;
-    color: #d0f4decc;
-    margin-bottom: 3rem;
-    max-width: 580px;
-    margin-left: auto;
-    margin-right: auto;
-    animation: fadeInUp 1.3s ease forwards;
+    color: #007c4d;
+    margin-bottom: 40px;
   }
-
-  /* Call to Action Button */
-  .call-btn {
-    background: #FF6F00;
-    color: #fff;
-    font-weight: 800;
-    font-size: 2.3rem;
-    padding: 22px 80px;
-    border-radius: 70px;
-    box-shadow: 0 8px 36px rgba(255,111,0,0.75);
-    user-select: none;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+  header .hero-call-btn {
+    background: #ff6600;
+    color: white;
+    font-weight: 700;
+    font-size: 1.85rem;
+    padding: 24px 70px;
+    border-radius: 60px;
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.6);
     transition: background 0.3s ease, box-shadow 0.3s ease;
-    display: inline-block;
-    cursor: pointer;
+    user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     animation: pulse 2.5s infinite;
   }
-  .call-btn:hover, .call-btn:focus {
-    background: #e05e00;
-    box-shadow: 0 18px 65px rgba(224, 94, 0, 0.85);
+  header .hero-call-btn:hover {
+    background: #e65500;
+    box-shadow: 0 14px 40px rgba(230, 85, 0, 0.85);
   }
-  .call-btn:active {
+  header .hero-call-btn:active {
     transform: scale(0.95);
+  }
+
+  /* pulse animation */
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 10px 30px rgba(255,102,0,0.6);
+    }
+    50% {
+      box-shadow: 0 20px 45px rgba(255,102,0,0.9);
+    }
   }
 
   /* Info text */
   .info-text {
-    margin-top: 1.4rem;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    color: #c1e7beaa;
-    letter-spacing: 0.04em;
-    animation: fadeInUp 1.7s ease forwards;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    color: #007c4d;
   }
 
-  /* Openingstijden card */
-  .hours {
-    background: #ffffff22;
-    padding: 2.2rem 3rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 166, 81, 0.33);
-    max-width: 360px;
-    margin: 0 auto 4rem;
+  /* Trust section */
+  .trust-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 60px 0 80px 0;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    background: #007c4d;
+    color: white;
+    padding: 28px 38px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,124,77,0.5);
+    flex: 1 1 240px;
+    max-width: 260px;
     font-weight: 700;
-    font-size: 1.4rem;
-    color: #b3e1a5;
-    text-align: center;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 0.7px;
     user-select: none;
     transition: background 0.3s ease;
-    cursor: default;
   }
-  .hours:hover {
-    background: #00a651dd;
+  .trust-item:hover {
+    background: #00542b;
   }
 
   /* Contact section */
-  .contact {
-    background: rgba(255 255 255 / 0.17);
-    padding: 3.5rem 4rem;
-    border-radius: 22px;
-    box-shadow: 0 10px 50px rgba(0, 116, 217, 0.25);
-    max-width: 720px;
-    margin: 0 auto 5rem;
-    font-size: 1.3rem;
-    line-height: 1.9;
-    font-weight: 600;
-    color: #d3e9c9;
-    user-select: text;
-    letter-spacing: 0.02em;
+  .contact-section {
+    background: #f2f7f6;
+    padding: 40px 30px 45px 30px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 0 auto 90px auto;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.12);
     text-align: left;
+    font-weight: 600;
+    color: #222;
   }
-  .contact p {
-    margin-bottom: 1.4rem;
+  .contact-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: #007c4d;
+    margin-bottom: 25px;
   }
-  .contact strong {
-    color: #a5d09c;
+  .contact-section p, .contact-section a {
+    font-size: 1.1rem;
+    line-height: 1.7;
   }
-  .contact a {
-    color: #f4f9f6;
+  .contact-section a {
+    color: #007c4d;
     font-weight: 700;
-    transition: color 0.3s ease;
   }
-  .contact a:hover, .contact a:focus {
-    color: #fff;
+  .contact-section p:not(:last-child) {
+    margin-bottom: 18px;
   }
 
-  /* Extra blocks */
-  .features {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto 4rem;
+  /* Contact form */
+  .contact-form {
+    margin-top: 28px;
   }
-  .feature-card {
-    background: rgba(255 255 255 / 0.13);
-    box-shadow: 0 8px 28px rgba(0, 116, 217, 0.2);
-    border-radius: 20px;
-    flex: 1 1 270px;
-    padding: 2.5rem 2rem;
-    color: #d0f4de;
-    font-weight: 600;
-    cursor: default;
-    user-select: none;
-    transition: background 0.3s ease;
-  }
-  .feature-card:hover {
-    background: rgba(255 255 255 / 0.25);
-  }
-  .feature-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    color: #90c56f;
-  }
-  .feature-title {
-    font-size: 1.4rem;
+  .contact-form label {
+    display: block;
     font-weight: 700;
-    margin-bottom: 0.6rem;
-    color: #a3d7a1;
+    margin-bottom: 10px;
+    color: #00542b;
   }
-  .feature-desc {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #b7e0b4;
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 8px;
+    border: 1.8px solid #007c4d;
+    padding: 14px 16px;
+    margin-bottom: 22px;
+    transition: border-color 0.3s ease;
+  }
+  .contact-form input:focus, .contact-form textarea:focus {
+    border-color: #004e92;
+    outline: none;
+  }
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+  .contact-form button {
+    background: #ff6600;
+    color: white;
+    font-weight: 700;
+    padding: 18px 46px;
+    font-size: 1.25rem;
+    border-radius: 50px;
+    box-shadow: 0 6px 18px rgba(255,102,0,0.6);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .contact-form button:hover {
+    background: #e65500;
+    box-shadow: 0 10px 25px rgba(230,85,0,0.8);
+  }
+  .contact-form button:active {
+    transform: scale(0.95);
   }
 
   /* Footer */
   footer {
-    background: #003b21;
-    color: #b6c7b0;
-    padding: 2.5rem 2rem;
-    font-size: 1rem;
+    background: #003c70;
+    color: #c3d7ea;
+    font-weight: 600;
     text-align: center;
+    padding: 22px 15px;
+    font-size: 0.95rem;
     user-select: none;
-    letter-spacing: 0.14em;
   }
   footer a {
-    color: #a5d09c;
+    color: #ff9900;
     font-weight: 700;
     text-decoration: underline;
   }
 
-  /* Animations */
-  @keyframes pulse {
-    0%, 100% {
-      box-shadow: 0 8px 36px rgba(255,111,0,0.75);
-    }
-    50% {
-      box-shadow: 0 16px 60px rgba(255,111,0,1);
-      transform: scale(1.05);
-    }
-  }
-  @keyframes slideInDown {
-    0% {opacity: 0; transform: translateY(-40px);}
-    100% {opacity: 1; transform: translateY(0);}
-  }
-  @keyframes fadeInUp {
-    0% {opacity: 0; transform: translateY(30px);}
-    100% {opacity: 1; transform: translateY(0);}
-  }
-
   /* Responsive */
-  @media (max-width: 780px) {
-    .features {
-      flex-direction: column;
-      max-width: 320px;
-      margin: 0 auto 4rem;
-    }
-  }
-  @media (max-width: 480px) {
+  @media (max-width: 580px) {
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.7rem;
     }
     header p {
-      font-size: 1.2rem;
-    }
-    .call-btn {
-      padding: 18px 45px;
-      font-size: 1.7rem;
-      letter-spacing: 0.12em;
-    }
-    .info-text {
-      font-size: 1rem;
-    }
-    .hours {
-      max-width: 100%;
       font-size: 1.1rem;
-      padding: 1.5rem 2rem;
     }
-    .contact {
-      font-size: 1rem;
-      padding: 2rem 1.2rem;
+    .topbar {
+      padding: 12px 18px;
+    }
+    .topbar .call-btn {
+      padding: 10px 24px;
+      font-size: 0.9rem;
+    }
+    .container {
+      margin: 30px auto 60px auto;
+      padding: 40px 20px 50px 20px;
+    }
+    .trust-section {
+      gap: 24px;
+      margin: 40px 0 50px 0;
+    }
+    .trust-item {
       max-width: 100%;
-      text-align: center;
     }
-    .contact p {
-      margin-bottom: 1rem;
+    .contact-section {
+      max-width: 100%;
+      padding: 30px 20px 35px 20px;
+    }
+    .contact-section h2 {
+      font-size: 1.7rem;
     }
   }
 </style>
 </head>
 <body>
-  <div class="container" role="main">
+  <!-- Sticky topbar -->
+  <div class="topbar" role="banner">
+    <div class="logo" aria-label="Logo Klantenservice Energie">Klantenservice Energie</div>
+    <a href="tel:0850608830" class="call-btn" aria-label="Bel nu 085 060 8830">Bel Nu</a>
+  </div>
+
+  <!-- Main container -->
+  <main class="container" role="main">
     <header>
       <h1>Klantenservice Energie</h1>
       <p>Wij staan voor je klaar, snel en vriendelijk.</p>
-      <a href="tel:0850608830" class="call-btn" aria-label="Bel nu 085 060 8830" role="button">Bel nu 085 060 8830</a>
+      <a href="tel:0850608830" class="hero-call-btn" aria-label="Bel nu 085 060 8830">Bel nu 085 060 8830</a>
       <div class="info-text">Bereikbaar maandag t/m zaterdag, 09:00 - 20:00</div>
     </header>
 
-    <section class="hours" aria-label="Openingstijden">
-      Maandag - Zaterdag<br />
-      09:00 - 20:00
+    <!-- Trust / benefits section -->
+    <section class="trust-section" aria-label="Waarom kiezen voor Klantenservice Energie?">
+      <div class="trust-item" tabindex="0" role="article" aria-describedby="trust1">
+        Snel antwoord, zonder wachttijd
+      </div>
+      <div class="trust-item" tabindex="0" role="article" aria-describedby="trust2">
+        Deskundige en vriendelijke medewerkers
+      </div>
+      <div class="trust-item" tabindex="0" role="article" aria-describedby="trust3">
+        Transparante en heldere communicatie
+      </div>
     </section>
 
-    <section class="contact" aria-label="Contactinformatie">
+    <!-- Contact section -->
+    <section class="contact-section" aria-label="Contactinformatie">
+      <h2>Contact</h2>
       <p><strong>Telefoon:</strong> <a href="tel:0850608830">085 060 8830</a></p>
       <p><strong>Email:</strong> <a href="mailto:info@klantenservice-energie.nl">info@klantenservice-energie.nl</a></p>
+
+      <form class="contact-form" action="mailto:info@klantenservice-energie.nl" method="post" enctype="text/plain" aria-label="Contactformulier">
+        <label for="name">Naam</label>
+        <input type="text" id="name" name="Naam" required autocomplete="name" />
+
+        <label for="phone">Telefoonnummer</label>
+        <input type="tel" id="phone" name="Telefoonnummer" required autocomplete="tel" pattern="[0-9\s\-\+]{7,15}" />
+
+        <label for="message">Bericht</label>
+        <textarea id="message" name="Bericht" rows="4" required></textarea>
+
+        <button type="submit" aria-label="Verzend bericht">Verzend</button>
+      </form>
     </section>
+  </main>
 
-    <section class="features" aria-label="Voordelen">
-      <div class="feature-card" tabindex="0" aria-describedby="feature1-desc">
-        <div class="feature-icon" aria-hidden="true">⚡</div>
-        <div class="feature-title">Snel Antwoord</div>
-        <div id="feature1-desc" class="feature-desc">Onze klantenservice staat altijd klaar om jouw vragen snel en duidelijk te beantwoorden, zodat je nooit lang hoeft te wachten.</div>
-      </div>
-      <div class="feature-card" tabindex="0" aria-describedby="feature2-desc">
-        <div class="feature-icon" aria-hidden="true">🤝</div>
-        <div class="feature-title">Persoonlijke Service</div>
-        <div id="feature2-desc" class="feature-desc">We luisteren naar je wensen en zorgen dat je altijd geholpen wordt door een vriendelijke en deskundige medewerker.</div>
-      </div>
-      <div class="feature-card" tabindex="0" aria-describedby="feature3-desc">
-        <div class="feature-icon" aria-hidden="true">💡</div>
-        <div class="feature-title">Helder & Transparant</div>
-        <div id="feature3-desc" class="feature-desc">Geen kleine lettertjes. Altijd duidelijkheid over je energiecontract en service zonder verrassingen.</div>
-      </div>
-    </section>
-
-    <section aria-label="Extra informatie" style="max-width:720px; margin: 0 auto 4rem; color: #d6e8d9; font-weight:600; line-height:1.7; font-size:1.1rem;">
-      <h2 style="font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: 700; margin-bottom: 1rem; color:#a6d197; letter-spacing: 0.1em; font-size: 1.6rem;">
-        Waarom Klantenservice Energie?
-      </h2>
-      <p>Onze jarenlange ervaring in de energiebranche zorgt ervoor dat wij jou snel en accuraat kunnen helpen met al je vragen en verzoeken.</p>
-      <p>We combineren klantvriendelijkheid met deskundigheid, zodat jij altijd met vertrouwen belt.</p>
-      <p>Bij ons geen ingewikkelde processen, maar direct contact met een echte medewerker die jou helpt.</p>
-      <p>We zorgen voor snelle antwoorden en maken het makkelijk voor jou om direct de juiste keuze te maken.</p>
-    </section>
-
-    <section aria-label="Nog meer voordelen" style="max-width:720px; margin: 0 auto 6rem; color: #c1ddb2; font-weight:600; line-height:1.6; font-size:1.1rem;">
-      <h2 style="font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: 700; margin-bottom: 1rem; color:#8fcc7c; letter-spacing: 0.1em; font-size: 1.4rem;">
-        Meer redenen om te bellen
-      </h2>
-      <ul style="list-style: none; padding-left: 0;">
-        <li>🔹 Professionele en vriendelijke medewerkers</li>
-        <li>🔹 Altijd snelle en duidelijke antwoorden</li>
-        <li>🔹 Transparante service zonder verborgen kosten</li>
-        <li>🔹 Eenvoudig en direct telefonisch contact</li>
-        <li>🔹 Bereikbaar op tijden die jou uitkomen</li>
-        <li>🔹 Advies op maat voor jouw situatie</li>
-      </ul>
-    </section>
-
-  </div>
-
-  <footer>
+  <footer role="contentinfo">
     &copy; 2025 Klantenservice Energie | <a href="mailto:info@klantenservice-energie.nl">info@klantenservice-energie.nl</a>
   </footer>
-
 </body>
 </html>
