@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Klantenservice Energie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & basics */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #f9fafc;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: space-between;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Banner */
+    header {
+      background: linear-gradient(135deg, #0074D9, #00a651);
+      padding: 50px 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 116, 217, 0.3);
+      text-align: center;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    header p {
+      font-size: 1.25rem;
+      margin-bottom: 35px;
+      font-weight: 600;
+      opacity: 0.85;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Call-to-action button */
+    .call-btn {
+      background: #ff6600;
+      color: white;
+      font-weight: 700;
+      font-size: 1.75rem;
+      padding: 22px 60px;
+      border-radius: 50px;
+      box-shadow: 0 6px 15px rgba(255, 102, 0, 0.5);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+      user-select: none;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .call-btn:hover {
+      background: #e65500;
+      box-shadow: 0 10px 25px rgba(230, 85, 0, 0.7);
+    }
+    .call-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Info below button */
+    .info-text {
+      color: #555;
+      margin-top: 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      opacity: 0.8;
+    }
+
+    /* Openingstijden */
+    .hours {
+      background: white;
+      padding: 28px 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 166, 81, 0.15);
+      max-width: 320px;
+      margin: 0 auto 60px auto;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #0074D9;
+      text-align: center;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    /* Contact section */
+    .contact {
+      background: white;
+      padding: 32px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 116, 217, 0.1);
+      max-width: 720px;
+      margin: 0 auto 80px auto;
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+    .contact p {
+      margin-bottom: 12px;
+    }
+    .contact strong {
+      color: #0074D9;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #ddd;
+      padding: 20px 15px;
+      font-size: 0.9rem;
+      text-align: center;
+      user-select: none;
+      letter-spacing: 0.8px;
+    }
+    footer a {
+      color: #ff6600;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.7rem;
+      }
+      .call-btn {
+        padding: 18px 40px;
+        font-size: 1.4rem;
+      }
+      .hours {
+        max-width: 100%;
+        font-size: 1.1rem;
+      }
+      .contact {
+        max-width: 100%;
+        font-size: 1rem;
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Klantenservice Energie</h1>
+      <p>Wij staan voor je klaar, snel en vriendelijk.</p>
+      <a href="tel:0850608830" class="call-btn" aria-label="Bel nu 085 060 8830">Bel nu 085 060 8830</a>
+      <div class="info-text">Bereikbaar maandag t/m zaterdag, 09:00 - 20:00</div>
+    </header>
+
+    <section class="hours" aria-label="Openingstijden">
+      Maandag - Zaterdag<br />
+      09:00 - 20:00
+    </section>
+
+    <section class="contact" aria-label="Contactinformatie">
+      <p><strong>Telefoon:</strong> <a href="tel:0850608830">085 060 8830</a></p>
+      <p><strong>Email:</strong> <a href="mailto:info@klantenservice-energie.nl">info@klantenservice-energie.nl</a></p>
+      <p><small>Wij zijn een onafhankelijke dienstverlener, niet verbonden aan Eneco.</small></p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Klantenservice Energie | <a href="mailto:info@klantenservice-energie.nl">info@klantenservice-energie.nl</a>
+  </footer>
+</body>
+</html>
