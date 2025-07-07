@@ -1,189 +1,285 @@
-<!-- Trigger nieuwe deploy -->
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Klantenservice Energie</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
-  <style>
-    /* Reset & basics */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background: #f9fafc;
-      color: #222;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      justify-content: space-between;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    button {
-      cursor: pointer;
-      border: none;
-      outline: none;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Klantenservice Energie - Snel & Vriendelijk Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet" />
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #00539C 0%, #007E3A 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:focus, button:focus {
+    outline: 3px solid #FFD166;
+    outline-offset: 4px;
+  }
 
-    /* Container */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px 24px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+  /* Container */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
 
-    /* Banner */
-    header {
-      background: linear-gradient(135deg, #0074D9, #00a651);
-      padding: 50px 20px;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0, 116, 217, 0.3);
-      text-align: center;
-      color: white;
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 40px;
+  /* Header */
+  header {
+    background: rgba(255 255 255 / 0.15);
+    border-radius: 18px;
+    padding: 4rem 2rem 3rem;
+    box-shadow: 0 12px 28px rgba(0, 116, 217, 0.45);
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 4.2rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+    animation: slideInDown 1s ease forwards;
+  }
+  header p {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #d0f4decc;
+    margin-bottom: 3rem;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1.3s ease forwards;
+  }
+
+  /* Call to Action Button */
+  .call-btn {
+    background: #FF6F00;
+    color: #fff;
+    font-weight: 800;
+    font-size: 2.3rem;
+    padding: 22px 80px;
+    border-radius: 70px;
+    box-shadow: 0 8px 36px rgba(255,111,0,0.75);
+    user-select: none;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    animation: pulse 2.5s infinite;
+  }
+  .call-btn:hover, .call-btn:focus {
+    background: #e05e00;
+    box-shadow: 0 18px 65px rgba(224, 94, 0, 0.85);
+  }
+  .call-btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Info text */
+  .info-text {
+    margin-top: 1.4rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #c1e7beaa;
+    letter-spacing: 0.04em;
+    animation: fadeInUp 1.7s ease forwards;
+  }
+
+  /* Openingstijden card */
+  .hours {
+    background: #ffffff22;
+    padding: 2.2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 166, 81, 0.33);
+    max-width: 360px;
+    margin: 0 auto 4rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #b3e1a5;
+    text-align: center;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    user-select: none;
+    transition: background 0.3s ease;
+    cursor: default;
+  }
+  .hours:hover {
+    background: #00a651dd;
+  }
+
+  /* Contact section */
+  .contact {
+    background: rgba(255 255 255 / 0.17);
+    padding: 3.5rem 4rem;
+    border-radius: 22px;
+    box-shadow: 0 10px 50px rgba(0, 116, 217, 0.25);
+    max-width: 720px;
+    margin: 0 auto 5rem;
+    font-size: 1.3rem;
+    line-height: 1.9;
+    font-weight: 600;
+    color: #d3e9c9;
+    user-select: text;
+    letter-spacing: 0.02em;
+    text-align: left;
+  }
+  .contact p {
+    margin-bottom: 1.4rem;
+  }
+  .contact strong {
+    color: #a5d09c;
+  }
+  .contact a {
+    color: #f4f9f6;
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
+  .contact a:hover, .contact a:focus {
+    color: #fff;
+  }
+
+  /* Extra blocks */
+  .features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto 4rem;
+  }
+  .feature-card {
+    background: rgba(255 255 255 / 0.13);
+    box-shadow: 0 8px 28px rgba(0, 116, 217, 0.2);
+    border-radius: 20px;
+    flex: 1 1 270px;
+    padding: 2.5rem 2rem;
+    color: #d0f4de;
+    font-weight: 600;
+    cursor: default;
+    user-select: none;
+    transition: background 0.3s ease;
+  }
+  .feature-card:hover {
+    background: rgba(255 255 255 / 0.25);
+  }
+  .feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #90c56f;
+  }
+  .feature-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: #a3d7a1;
+  }
+  .feature-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #b7e0b4;
+  }
+
+  /* Footer */
+  footer {
+    background: #003b21;
+    color: #b6c7b0;
+    padding: 2.5rem 2rem;
+    font-size: 1rem;
+    text-align: center;
+    user-select: none;
+    letter-spacing: 0.14em;
+  }
+  footer a {
+    color: #a5d09c;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  /* Animations */
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 8px 36px rgba(255,111,0,0.75);
     }
+    50% {
+      box-shadow: 0 16px 60px rgba(255,111,0,1);
+      transform: scale(1.05);
+    }
+  }
+  @keyframes slideInDown {
+    0% {opacity: 0; transform: translateY(-40px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+  @keyframes fadeInUp {
+    0% {opacity: 0; transform: translateY(30px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Responsive */
+  @media (max-width: 780px) {
+    .features {
+      flex-direction: column;
+      max-width: 320px;
+      margin: 0 auto 4rem;
+    }
+  }
+  @media (max-width: 480px) {
     header h1 {
-      font-size: 3.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
+      font-size: 2.8rem;
     }
     header p {
-      font-size: 1.25rem;
-      margin-bottom: 35px;
-      font-weight: 600;
-      opacity: 0.85;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1.2rem;
     }
-
-    /* Call-to-action button */
     .call-btn {
-      background: #ff6600;
-      color: white;
-      font-weight: 700;
-      font-size: 1.75rem;
-      padding: 22px 60px;
-      border-radius: 50px;
-      box-shadow: 0 6px 15px rgba(255, 102, 0, 0.5);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      display: inline-block;
-      user-select: none;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
+      padding: 18px 45px;
+      font-size: 1.7rem;
+      letter-spacing: 0.12em;
     }
-    .call-btn:hover {
-      background: #e65500;
-      box-shadow: 0 10px 25px rgba(230, 85, 0, 0.7);
-    }
-    .call-btn:active {
-      transform: scale(0.97);
-    }
-
-    /* Info below button */
     .info-text {
-      color: #555;
-      margin-top: 15px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.8px;
-      opacity: 0.8;
+      font-size: 1rem;
     }
-
-    /* Openingstijden */
     .hours {
-      background: white;
-      padding: 28px 25px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 166, 81, 0.15);
-      max-width: 320px;
-      margin: 0 auto 60px auto;
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: #0074D9;
-      text-align: center;
-      letter-spacing: 1.1px;
-      text-transform: uppercase;
-    }
-
-    /* Contact section */
-    .contact {
-      background: white;
-      padding: 32px 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 116, 217, 0.1);
-      max-width: 720px;
-      margin: 0 auto 80px auto;
+      max-width: 100%;
       font-size: 1.1rem;
-      color: #333;
-      line-height: 1.6;
-      font-weight: 600;
+      padding: 1.5rem 2rem;
+    }
+    .contact {
+      font-size: 1rem;
+      padding: 2rem 1.2rem;
+      max-width: 100%;
+      text-align: center;
     }
     .contact p {
-      margin-bottom: 12px;
+      margin-bottom: 1rem;
     }
-    .contact strong {
-      color: #0074D9;
-    }
-
-    /* Footer */
-    footer {
-      background: #222;
-      color: #ddd;
-      padding: 20px 15px;
-      font-size: 0.9rem;
-      text-align: center;
-      user-select: none;
-      letter-spacing: 0.8px;
-    }
-    footer a {
-      color: #ff6600;
-      font-weight: 600;
-      text-decoration: underline;
-    }
-
-    /* Responsive */
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2.7rem;
-      }
-      .call-btn {
-        padding: 18px 40px;
-        font-size: 1.4rem;
-      }
-      .hours {
-        max-width: 100%;
-        font-size: 1.1rem;
-      }
-      .contact {
-        max-width: 100%;
-        font-size: 1rem;
-        padding: 20px 15px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" role="main">
     <header>
       <h1>Klantenservice Energie</h1>
       <p>Wij staan voor je klaar, snel en vriendelijk.</p>
-      <a href="tel:0850608830" class="call-btn" aria-label="Bel nu 085 060 8830">Bel nu 085 060 8830</a>
+      <a href="tel:0850608830" class="call-btn" aria-label="Bel nu 085 060 8830" role="button">Bel nu 085 060 8830</a>
       <div class="info-text">Bereikbaar maandag t/m zaterdag, 09:00 - 20:00</div>
     </header>
 
@@ -195,12 +291,55 @@
     <section class="contact" aria-label="Contactinformatie">
       <p><strong>Telefoon:</strong> <a href="tel:0850608830">085 060 8830</a></p>
       <p><strong>Email:</strong> <a href="mailto:info@klantenservice-energie.nl">info@klantenservice-energie.nl</a></p>
-      <p><small>Wij zijn een onafhankelijke dienstverlener, niet verbonden aan Eneco.</small></p>
     </section>
+
+    <section class="features" aria-label="Voordelen">
+      <div class="feature-card" tabindex="0" aria-describedby="feature1-desc">
+        <div class="feature-icon" aria-hidden="true">⚡</div>
+        <div class="feature-title">Snel Antwoord</div>
+        <div id="feature1-desc" class="feature-desc">Onze klantenservice staat altijd klaar om jouw vragen snel en duidelijk te beantwoorden, zodat je nooit lang hoeft te wachten.</div>
+      </div>
+      <div class="feature-card" tabindex="0" aria-describedby="feature2-desc">
+        <div class="feature-icon" aria-hidden="true">🤝</div>
+        <div class="feature-title">Persoonlijke Service</div>
+        <div id="feature2-desc" class="feature-desc">We luisteren naar je wensen en zorgen dat je altijd geholpen wordt door een vriendelijke en deskundige medewerker.</div>
+      </div>
+      <div class="feature-card" tabindex="0" aria-describedby="feature3-desc">
+        <div class="feature-icon" aria-hidden="true">💡</div>
+        <div class="feature-title">Helder & Transparant</div>
+        <div id="feature3-desc" class="feature-desc">Geen kleine lettertjes. Altijd duidelijkheid over je energiecontract en service zonder verrassingen.</div>
+      </div>
+    </section>
+
+    <section aria-label="Extra informatie" style="max-width:720px; margin: 0 auto 4rem; color: #d6e8d9; font-weight:600; line-height:1.7; font-size:1.1rem;">
+      <h2 style="font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: 700; margin-bottom: 1rem; color:#a6d197; letter-spacing: 0.1em; font-size: 1.6rem;">
+        Waarom Klantenservice Energie?
+      </h2>
+      <p>Onze jarenlange ervaring in de energiebranche zorgt ervoor dat wij jou snel en accuraat kunnen helpen met al je vragen en verzoeken.</p>
+      <p>We combineren klantvriendelijkheid met deskundigheid, zodat jij altijd met vertrouwen belt.</p>
+      <p>Bij ons geen ingewikkelde processen, maar direct contact met een echte medewerker die jou helpt.</p>
+      <p>We zorgen voor snelle antwoorden en maken het makkelijk voor jou om direct de juiste keuze te maken.</p>
+    </section>
+
+    <section aria-label="Nog meer voordelen" style="max-width:720px; margin: 0 auto 6rem; color: #c1ddb2; font-weight:600; line-height:1.6; font-size:1.1rem;">
+      <h2 style="font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: 700; margin-bottom: 1rem; color:#8fcc7c; letter-spacing: 0.1em; font-size: 1.4rem;">
+        Meer redenen om te bellen
+      </h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li>🔹 Professionele en vriendelijke medewerkers</li>
+        <li>🔹 Altijd snelle en duidelijke antwoorden</li>
+        <li>🔹 Transparante service zonder verborgen kosten</li>
+        <li>🔹 Eenvoudig en direct telefonisch contact</li>
+        <li>🔹 Bereikbaar op tijden die jou uitkomen</li>
+        <li>🔹 Advies op maat voor jouw situatie</li>
+      </ul>
+    </section>
+
   </div>
 
   <footer>
     &copy; 2025 Klantenservice Energie | <a href="mailto:info@klantenservice-energie.nl">info@klantenservice-energie.nl</a>
   </footer>
+
 </body>
 </html>
